@@ -6,19 +6,10 @@ dist: trusty
 sudo: false
 cache: yarn
 
-script:
-- yarn hello
-- yarn bye
-
-branches:
-  only:
-  - beta
-
 deploy:
   provider: npm
-  email: frips.ryilsufupe+dev@gmail.com
-  api_key:
-    secure: V9DLcTfKvtHe79qvMeYFwzZREZDaakCPX4Se/n0a7YXeduXscQrTrOVkU1m2422QUe9iI3fs98A7pl4D/PdbLmt67oA0Oszsr9sJ2kcUQ5m7oRj8hT1cCTYhX/ch+g1KamRkYd7dY902keReZvADaEfpf7S0NiTqNvNj/QeG2keI0/JUv9STXr3ZjTZjdwWgG4NSI3PXhf27tMgki0nKtgQwk6FsEN6SFh76pP674UD+NQ7z8utCPtAB6kFBgWgnKSFNhaoW0yTxQuOynrFgUOKd2uUTyy1z+/xJ21UKI88gV4xKwoMRTwKaHY+UACD74MvllM6tiyHgSdrlaEejRqVUf/G8wed89kowDk+tiT5ABExy9NnlGpZe0sYcoKX+v1txTI+gy9Wq6AmrF3lTgs37wO96p2kKSIa/YO44paydp/R7gJXgMc5IbR00XX96R3THpG6s+Hxwqc3g84BGSrPiqSWLN4MNhP5bTgAOASOJKQIbf5Wdctv0ef55bs0kJBpBY1mZ4lEXplZ1gItQ++VYCkdQy+Hy//xttfcVEJSN19821cklLOi+UgWCDNuQ11vvttu/8GKr8gYnh8L2oNPAYAcUn7BtVIoZKZV1cX1K8ETFjmhGZ4uGzxDYsFs96DMWnjw8Cn3tlrahcX43LFKTYKWYyBlP49ujG5U+eFY=
-  skip_cleanup: true
+  email: $NPM_EMAIL
+  api_key: $NPM_TOKEN
   on:
     tags: true
+  skip_cleanup: true
