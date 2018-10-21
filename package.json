@@ -2,5 +2,19 @@
   "name": "travis-practice",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "sample.md"
+  ],
+  "scripts": {
+    "hello": "cowsay hello",
+    "bye": "cowsay bye",
+    "release:major": "changelog -M -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version major -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
+    "release:minor": "changelog -m -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version minor -m 'feat: :tada: updated version' && git push origin && git push origin --tags",
+    "release:patch": "changelog -p -u $npm_package_config_changelog && git add CHANGELOG.md && git commit --no-verify -m 'docs(CHANGELOG.md): :bookmark: updated CHANGELOG.md' && npm version patch -m 'feat: :tada: updated version' && git push origin && git push origin --tags"
+  },
+  "devDependencies": {
+    "cowsay": "^1.3.1",
+    "generate-changelog": "^1.7.1"
+  }
 }
