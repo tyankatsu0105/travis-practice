@@ -6,10 +6,6 @@ dist: trusty
 sudo: false
 cache: yarn
 
-branches:
-  only:
-  - master
-
 script:
 - yarn hoge
 
