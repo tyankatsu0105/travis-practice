@@ -6,6 +6,10 @@ dist: trusty
 sudo: false
 cache: yarn
 
+script:
+- yarn hello
+- yarn bye
+
 deploy:
   provider: npm
   email: $NPM_EMAIL
