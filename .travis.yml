@@ -6,9 +6,12 @@ dist: trusty
 sudo: false
 cache: yarn
 
+branches:
+  only:
+  - master
+
 script:
-- yarn hello
-- yarn bye
+- yarn hoge
 
 deploy:
   provider: npm
