@@ -4,7 +4,10 @@ node_js:
 
 dist: trusty
 sudo: false
-cache: yarn
+cache: 
+  - yarn
+  directories:
+    - node_modules
 
 branches:
   only:
