@@ -2,12 +2,16 @@ language: node_js
 node_js:
 - 10
 
+dist: trusty
+sudo: false
+cache: yarn
+
 branches:
   only:
   - "/^v?[0-9\\.]+/"
 
 script:
-- npm run build
+- yarn build
 
 deploy:
   provider: npm
