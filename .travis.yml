@@ -8,7 +8,7 @@ cache: yarn
 
 stages:
   - name: test
-    if: branch = master AND type = pull_request
+    if: type = pull_request
   - name: npm deploy
     if: tag =~ /^v?[0-9\\.]+/
 
@@ -17,12 +17,8 @@ jobs:
     - stage: test
       script: yarn test
     - stage: npm deploy
-      script: yarn build
-
-deploy:
-  provider: npm
-  email: $NPM_EMAIL_DEMO
-  api_key: $NPM_TOKEN_DEMO
-  on:
-    tags: true
-  skip_cleanup: true
+      deploy:
+        provider: npm
+        email: $NPM_EMAIL_DEMO
+        api_key: $NPM_TOKEN_DEMO
+        skip_cleanup: true
