@@ -8,6 +8,7 @@
     "build.md"
   ],
   "scripts": {
+    "test": "cowsay test",
     "hello": "cowsay hello",
     "bye": "cowsay bye",
     "hoge": "echo hoge > ./hoge.md",
