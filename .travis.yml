@@ -26,3 +26,5 @@ jobs:
         email: $NPM_EMAIL_DEMO
         api_key: $NPM_TOKEN_DEMO
         skip_cleanup: true
+        on:
+          tags: true
