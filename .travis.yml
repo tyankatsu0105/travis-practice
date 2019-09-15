@@ -10,7 +10,7 @@ stages:
   - name: test
     if: branch = master AND type = pull_request
   - name: npm deploy
-    if: tag = /^v?[0-9\\.]+/
+    if: tag =~ /^v?[0-9\\.]+/
 
 jobs:
   include:
