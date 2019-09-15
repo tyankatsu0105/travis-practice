@@ -17,8 +17,10 @@ jobs:
     - stage: test
       script: yarn test
     - stage: npm deploy
+      before_install: skip
       install: skip
       script: skip
+      after_success: true
       deploy:
         provider: npm
         email: $NPM_EMAIL_DEMO
