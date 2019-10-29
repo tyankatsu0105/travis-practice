@@ -7,24 +7,14 @@ sudo: false
 cache: yarn
 
 stages:
-  - name: test
-    if: type = pull_request
-  - name: npm deploy
-    if: tag =~ /^v?[0-9\\.]+/
+  - name: node hoge
+    if: type = pull_request AND branch IN hoge
+  - name: node fuga
+    if: type = pull_request AND branch IN fuga
 
 jobs:
   include:
-    - stage: test
-      script: yarn test
-    - stage: npm deploy
-      before_install: skip
-      install: skip
-      script: skip
-      after_success: true
-      deploy:
-        provider: npm
-        email: $NPM_EMAIL_DEMO
-        api_key: $NPM_TOKEN_DEMO
-        skip_cleanup: true
-        on:
-          tags: true
+    - stage: node hoge
+      script: node hoge-index.js
+    - stage: node fuga
+      script: node fuga-index.js
