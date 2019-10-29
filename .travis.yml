@@ -7,14 +7,15 @@ sudo: false
 cache: yarn
 
 stages:
-  - name: node hoge
-    if: pull_request AND branch =~ /^hoge\/.*$/
-  - name: node fuga
-    if: pull_request AND branch =~ /^fuga\/.*$/
+  - name: node
+    if: pull_request
 
 jobs:
   include:
-    - stage: node hoge
+    - stage: node
+
+      if: branch =~ /^hoge\/.*$/
       script: node hoge-index.js
-    - stage: node fuga
+
+      if: branch =~ /^fuga\/.*$/
       script: node fuga-index.js
