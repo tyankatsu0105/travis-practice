@@ -8,9 +8,9 @@ cache: yarn
 
 stages:
   - name: node hoge
-    if: type = pull_request AND branch =~ 1
+    if: type = pull_request AND branch = /hoge\//
   - name: node fuga
-    if: type = pull_request AND branch =~ 2
+    if: type = pull_request AND branch = /fuga\//
 
 jobs:
   include:
