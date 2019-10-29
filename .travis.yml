@@ -8,7 +8,7 @@ cache: yarn
 
 stages:
   - name: node hoge
-    if: type = pull_request AND branch =~ ^baal
+    if: type = pull_request AND branch =~ /^(baal\/)/
   - name: node fuga
     if: type = pull_request
 
